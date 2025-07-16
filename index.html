@@ -5,114 +5,178 @@
   <title>For Jyoti 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background: linear-gradient(to bottom right, #ffe6f0, #e0f7fa);
       font-family: 'Quicksand', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px;
-      min-height: 100vh;
+      overflow: hidden;
     }
 
-    h1 {
-      color: #d63384;
-      font-size: 36px;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px 2px #ffcce5;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 20px;
-      max-width: 600px;
-    }
-
-    .box {
-      width: 100%;
-      height: 140px;
-      background: linear-gradient(to bottom, #ffffff, #ffeef6);
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    .page {
+      width: 100vw;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 16px;
-      text-align: center;
-      padding: 10px;
-      color: #5a2a5f;
-    }
-
-    .box:hover {
-      background: #ffe3ec;
-      transform: scale(1.05) rotate(-1deg);
-    }
-
-    .box.clicked {
-      background: #fcddec;
-      font-size: 17px;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(135deg, #ffe0f0, #e0f7fa);
+      transition: opacity 1s ease-in-out;
+      z-index: 1;
     }
 
     .hidden {
-      display: none;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .final {
-      margin-top: 50px;
-      font-size: 24px;
-      background: #fff0f6;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    .box-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 160px);
+      gap: 30px;
+    }
+
+    .box {
+      width: 160px;
+      height: 160px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s;
       text-align: center;
-      color: #c9184a;
-      animation: fadeIn 1s ease-out;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: scale(0.9);}
-      to {opacity: 1; transform: scale(1);}
+    .box:hover {
+      transform: scale(1.1);
+      background: #ffebf0;
+    }
+
+    h1, h2 {
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+
+    .emoji {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .background-animation {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      color: pink;
+      animation: float 10s linear infinite;
+      font-size: 24px;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 1;
+      }
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #ff94c2;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
 
-  <h1>✨ Every Click is a Surprise for Jyoti ✨</h1>
-
-  <div class="grid">
-    <div class="box" onclick="reveal(this, 'Miss u pgla 😢💖')"></div>
-    <div class="box" onclick="reveal(this, 'Love you sooooooooo much 💖💫')"></div>
-    <div class="box" onclick="reveal(this, 'You always bring a smile 🙂🌸')"></div>
-    <div class="box" onclick="reveal(this, 'Your vibe is unmatched ✨🌼')"></div>
-    <div class="box" onclick="reveal(this, 'Stay the way you are. It’s perfect 💕')"></div>
-    <div class="box" onclick="reveal(this, 'You turn normal days into magical ones 🎈')"></div>
-    <div class="box" onclick="reveal(this, 'You deserve the world 💫💐')"></div>
-    <div class="box" onclick="reveal(this, 'Soft hug from my heart 🤗')"></div>
-    <div class="box" onclick="reveal(this, 'You’re a walking sunshine ☀️')"></div>
-    <div class="box" onclick="reveal(this, 'You make chaos look cute 😄')"></div>
-    <div class="box" onclick="reveal(this, 'If I had a flower for every time I missed you 🌷...')"></div>
-    <div class="box" onclick="reveal(this, 'Some people sparkle more than glitter ✨ You do.')"></div>
-    <div class="box" onclick="reveal(this, 'Final Surprise 💌')"></div>
+  <div class="background-animation">
+    <!-- Floating hearts -->
+    <div class="heart" style="left: 10%; animation-delay: 0s;">💖</div>
+    <div class="heart" style="left: 30%; animation-delay: 2s;">💕</div>
+    <div class="heart" style="left: 50%; animation-delay: 4s;">💘</div>
+    <div class="heart" style="left: 70%; animation-delay: 6s;">💗</div>
+    <div class="heart" style="left: 90%; animation-delay: 8s;">💞</div>
   </div>
 
-  <div class="final hidden" id="final">
-    💘 MISS YOU, JYOTI 💘<br><br>
-    Just wanted to remind you:<br>
-    You're admired, appreciated, and absolutely amazing 💐<br>
-    Can’t wait to see you again soon! 🌈
+  <div class="page" id="page1">
+    <h1>Hey Jyoti! 💌</h1>
+    <h2>Click a box to start your surprise journey ✨</h2>
+    <div class="box-grid">
+      <div class="box" onclick="nextPage(2)">🌈 Let's Begin</div>
+      <div class="box" onclick="nextPage(3)">💬 I Miss You</div>
+      <div class="box" onclick="nextPage(4)">🎁 Something Cute</div>
+      <div class="box" onclick="nextPage(5)">🎉 Last Surprise</div>
+    </div>
+  </div>
+
+  <div class="page hidden" id="page2">
+    <div class="emoji">🥺</div>
+    <h2>Miss u pgla 😢</h2>
+    <button class="btn" onclick="nextPage(1)">⬅ Back</button>
+  </div>
+
+  <div class="page hidden" id="page3">
+    <div class="emoji">❤️</div>
+    <h2>Love you sooooooooo much 💖</h2>
+    <button class="btn" onclick="nextPage(1)">⬅ Back</button>
+  </div>
+
+  <div class="page hidden" id="page4">
+    <div class="emoji">🧸</div>
+    <h2>Here’s a hug from me 🤗</h2>
+    <button class="btn" onclick="nextPage(6)">Next ➡</button>
+  </div>
+
+  <div class="page hidden" id="page5">
+    <div class="emoji">🌟</div>
+    <h2>You make everything better 💫</h2>
+    <button class="btn" onclick="nextPage(7)">Continue ➡</button>
+  </div>
+
+  <div class="page hidden" id="page6">
+    <div class="emoji">🌸</div>
+    <h2>You're like sunshine on a cloudy day ☀️</h2>
+    <button class="btn" onclick="nextPage(1)">Back to Start 🔄</button>
+  </div>
+
+  <div class="page hidden" id="page7">
+    <div class="emoji">🎈</div>
+    <h2>Whatever you're going through, I'm always here 💗</h2>
+    <p style="margin-top: 10px; font-size: 16px; color: #444;">This day might have been rough, but I hope this brought a smile 😊</p>
+    <button class="btn" onclick="nextPage(1)">Back to Start 🔄</button>
   </div>
 
   <script>
-    function reveal(el, msg) {
-      el.classList.add("clicked");
-      el.innerHTML = msg;
-
-      if (msg.includes('Final')) {
-        document.getElementById('final').classList.remove('hidden');
-      }
+    function nextPage(pageNumber) {
+      document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+      document.getElementById('page' + pageNumber).classList.remove('hidden');
     }
   </script>
 
