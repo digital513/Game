@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Jyoti 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffe6f0, #f0f8ff);
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 36px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px #ffcce5;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 140px);
+      gap: 25px;
+    }
+
+    .box {
+      width: 140px;
+      height: 140px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      text-align: center;
+      padding: 10px;
+      color: #5a2a5f;
+    }
+
+    .box:hover {
+      background: #ffe3ec;
+      transform: scale(1.05);
+    }
+
+    .box.clicked {
+      background: #fcddec;
+      font-size: 17px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .final {
+      margin-top: 50px;
+      font-size: 24px;
+      background: #fff0f6;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      color: #c9184a;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✨ Tap A Box, Jyoti ✨</h1>
+
+  <div class="grid">
+    <div class="box" onclick="reveal(this, 'Miss u pgla')"></div>
+    <div class="box" onclick="reveal(this, 'Love you sooooooooo much 💖')"></div>
+    <div class="box" onclick="reveal(this, 'You always bring a smile 🙂')"></div>
+    <div class="box" onclick="reveal(this, 'Your vibe is unmatched 🌸')"></div>
+    <div class="box" onclick="reveal(this, 'Stay just the way you are ✨')"></div>
+    <div class="box" onclick="reveal(this, 'Every day is better when you’re around')"></div>
+    <div class="box" onclick="reveal(this, 'You make simple moments special 🌼')"></div>
+    <div class="box" onclick="reveal(this, 'You deserve all the happiness 🎈')"></div>
+    <div class="box" onclick="reveal(this, 'Final Surprise 👉')"></div>
+  </div>
+
+  <div class="final hidden" id="final">
+    💌 MISS YOU, JYOTI 💌<br><br>
+    Just a little reminder that<br>
+    You are cherished, appreciated, and truly one of a kind 🌟
+  </div>
+
+  <script>
+    function reveal(el, msg) {
+      el.classList.add("clicked");
+      el.innerHTML = msg;
+
+      if (msg.includes('Final')) {
+        document.getElementById('final').classList.remove('hidden');
+      }
+    }
+  </script>
+
+</body>
+</html>
 
