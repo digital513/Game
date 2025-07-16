@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to bottom right, #ffe6f0, #f0f8ff);
+      background: linear-gradient(to bottom right, #ffe6f0, #e0f7fa);
       font-family: 'Quicksand', sans-serif;
       display: flex;
       flex-direction: column;
@@ -24,14 +24,15 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 140px);
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      max-width: 600px;
     }
 
     .box {
-      width: 140px;
+      width: 100%;
       height: 140px;
-      background: #ffffff;
+      background: linear-gradient(to bottom, #ffffff, #ffeef6);
       border-radius: 20px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       display: flex;
@@ -47,7 +48,7 @@
 
     .box:hover {
       background: #ffe3ec;
-      transform: scale(1.05);
+      transform: scale(1.05) rotate(-1deg);
     }
 
     .box.clicked {
@@ -79,24 +80,29 @@
 </head>
 <body>
 
-  <h1>✨ Tap A Box, Jyoti ✨</h1>
+  <h1>✨ Every Click is a Surprise for Jyoti ✨</h1>
 
   <div class="grid">
-    <div class="box" onclick="reveal(this, 'Miss u pgla')"></div>
-    <div class="box" onclick="reveal(this, 'Love you sooooooooo much 💖')"></div>
-    <div class="box" onclick="reveal(this, 'You always bring a smile 🙂')"></div>
-    <div class="box" onclick="reveal(this, 'Your vibe is unmatched 🌸')"></div>
-    <div class="box" onclick="reveal(this, 'Stay just the way you are ✨')"></div>
-    <div class="box" onclick="reveal(this, 'Every day is better when you’re around')"></div>
-    <div class="box" onclick="reveal(this, 'You make simple moments special 🌼')"></div>
-    <div class="box" onclick="reveal(this, 'You deserve all the happiness 🎈')"></div>
-    <div class="box" onclick="reveal(this, 'Final Surprise 👉')"></div>
+    <div class="box" onclick="reveal(this, 'Miss u pgla 😢💖')"></div>
+    <div class="box" onclick="reveal(this, 'Love you sooooooooo much 💖💫')"></div>
+    <div class="box" onclick="reveal(this, 'You always bring a smile 🙂🌸')"></div>
+    <div class="box" onclick="reveal(this, 'Your vibe is unmatched ✨🌼')"></div>
+    <div class="box" onclick="reveal(this, 'Stay the way you are. It’s perfect 💕')"></div>
+    <div class="box" onclick="reveal(this, 'You turn normal days into magical ones 🎈')"></div>
+    <div class="box" onclick="reveal(this, 'You deserve the world 💫💐')"></div>
+    <div class="box" onclick="reveal(this, 'Soft hug from my heart 🤗')"></div>
+    <div class="box" onclick="reveal(this, 'You’re a walking sunshine ☀️')"></div>
+    <div class="box" onclick="reveal(this, 'You make chaos look cute 😄')"></div>
+    <div class="box" onclick="reveal(this, 'If I had a flower for every time I missed you 🌷...')"></div>
+    <div class="box" onclick="reveal(this, 'Some people sparkle more than glitter ✨ You do.')"></div>
+    <div class="box" onclick="reveal(this, 'Final Surprise 💌')"></div>
   </div>
 
   <div class="final hidden" id="final">
-    💌 MISS YOU, JYOTI 💌<br><br>
-    Just a little reminder that<br>
-    You are cherished, appreciated, and truly one of a kind 🌟
+    💘 MISS YOU, JYOTI 💘<br><br>
+    Just wanted to remind you:<br>
+    You're admired, appreciated, and absolutely amazing 💐<br>
+    Can’t wait to see you again soon! 🌈
   </div>
 
   <script>
@@ -112,4 +118,3 @@
 
 </body>
 </html>
-
